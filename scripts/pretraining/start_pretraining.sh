@@ -1,26 +1,38 @@
 #!/bin/bash
 
-config_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/config'
-config_name='pretraining_large'
-data_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/data/pretraining'
-PORT=-1
-checkpoints_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints'
-log_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/logs/pretraining'
-tensorboard_path=${log_path}/tensorboard
+
+config_name='pretraining_base'
 gpus=8
-run_in_nohup=1  #0 for no, 1 for yes
+run_in_nohup=0  #0 for no, 1 for yes
+update_freq=$((64/${gpus}))
 
 
-update_freq=$((128/${gpus}))
-#update_freq=''$update_freq
-echo ${update_freq}
+
+
+dir=$PWD
+parentdir="$(dirname "$dir")"
+parentdir="$(dirname "$parentdir")"
+
+printf "** Directory to code is: $parentdir"
+
+config_path=${parentdir}'/config'
+data_path=${parentdir}'/data/pretraining'
+PORT=-1
+checkpoints_path=${parentdir}'/checkpoints/pretraining'
+log_path=${parentdir}'/logs/pretraining'
+tensorboard_path=${log_path}'/tensorboard'
+
+
+printf "\n** Config path is: $config_path/$config_name.yaml"
+printf "\n** Data path is: $data_path"
+printf "\n** Checkpoint will be saved at: $checkpoints_path"
+printf "\n** Logs will be saved at: ${log_path}"
+printf "\n** Update frequency is: ${update_freq}"
 
 timestamp() {
   date +"%Y-%m-%d_%H-%M-%S" # current time
 }
 
-echo ${local_timestamp}
-echo ${tensorboard_path}
 
 
 
@@ -29,9 +41,10 @@ if [ "${run_in_nohup}" = 1 ]; then
 	local_timestamp=$(timestamp)
 	tensorboard_path=${tensorboard_path}_${local_timestamp}
 	mkdir -p ${tensorboard_path}
-	echo ${local_timestamp}
-	echo ${tensorboard_path}
 
+	printf "\n** Tensorboard is running **"
+	printf "\n** Tensorboard logs path: ${tensorboard_path}"
+	printf "\n"
 
 	nohup fairseq-hydra-train \
 	    distributed_training.distributed_port=${PORT} \
@@ -47,6 +60,8 @@ if [ "${run_in_nohup}" = 1 ]; then
 	nohup tensorboard --logdir ${tensorboard_path} --bind_all &> /dev/null &
 
 else
+
+	echo "Hello"
 
 	fairseq-hydra-train \
 	    distributed_training.distributed_port=${PORT} \
