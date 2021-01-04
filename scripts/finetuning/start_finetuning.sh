@@ -1,27 +1,39 @@
 #!/bin/bash
 
-config_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/config'
+
+### Values to change - start ###
+
 config_name='finetuning'
-data_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/data/training'
-pretrained_model_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints/checkpoint_best.pt'
-PORT=-1
-checkpoints_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints/finetuning'
-log_path='/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/logs/finetuning'
-tensorboard_path=${log_path}/tensorboard
 gpus=8
 run_in_nohup=0  #0 for no, 1 for yes
 
+### Values to change - end ###
 
 
+dir=$PWD
+parentdir="$(dirname "$dir")"
+parentdir="$(dirname "$parentdir")"
 
+printf "** Directory to code is: $parentdir"
+
+config_path=${parentdir}'/config'
+data_path=${parentdir}'/data/finetuning'
+PORT=-1
+checkpoints_path=${parentdir}'/checkpoints/finetuning'
+log_path=${parentdir}'/logs/finetuning'
+tensorboard_path=${log_path}'/tensorboard'
 update_freq=$((24/${gpus}))
-#update_freq=''$update_freq
-echo ${update_freq}
+pretrained_model_path=${parentdir}'/checkpoints/pretraining/checkpoint_best.pt'
+
+printf "\n** Config path is: $config_path/$config_name.yaml"
+printf "\n** Data path is: $data_path"
+printf "\n** Checkpoint will be saved at: $checkpoints_path"
+printf "\n** Logs will be saved at: ${log_path}"
+printf "\n** Update frequency is: ${update_freq}"
 
 timestamp() {
   date +"%Y-%m-%d_%H-%M-%S" # current time
 }
-
 
 
 
@@ -30,8 +42,11 @@ if [ "${run_in_nohup}" = 1 ]; then
 	local_timestamp=$(timestamp)
 	tensorboard_path=${tensorboard_path}_${local_timestamp}
 	mkdir -p ${tensorboard_path}
-	echo ${local_timestamp}
-	echo ${tensorboard_path}
+	
+	printf "\n** Tensorboard is running **"
+	printf "\n** Tensorboard logs path: ${tensorboard_path}"
+	printf "\n"
+
 
 	nohup fairseq-hydra-train \
 	    distributed_training.distributed_port=${PORT} \
