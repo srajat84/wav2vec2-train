@@ -1,0 +1,597 @@
+2021-01-02 09:37:51 | INFO | fairseq.distributed_utils | distributed init (rank 1): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 2): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 3): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 5): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 0): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 7): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 6): tcp://localhost:13379
+2021-01-02 09:37:52 | INFO | fairseq.distributed_utils | distributed init (rank 4): tcp://localhost:13379
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 5
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 6
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 0
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 2
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 3
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 7
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 1
+2021-01-02 09:38:04 | INFO | fairseq.distributed_utils | initialized host mkb-gpu as rank 4
+2021-01-02 09:38:04 | INFO | fairseq_cli.train | {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 1, 'log_format': 'json', 'tensorboard_logdir': '/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/logs/tensorboard_2021-01-02_09-36-48', 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': True}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 8, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': 'tcp://localhost:13379', 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'no_c10d', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'fast_stat_sync': False, 'broadcast_buffers': False, 'distributed_wrapper': 'DDP', 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 8, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'tpu': False, 'distributed_num_procs': 8}, 'dataset': {'_name': None, 'num_workers': 6, 'skip_invalid_size_inputs_valid_test': True, 'max_tokens': 480000, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 480000, 'batch_size_valid': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 1000000, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [16], 'lr': [0.005], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': '/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints', 'restore_file': '/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints/checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 25000, 'keep_interval_updates': 1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'model_parallel_size': 1, 'distributed_rank': 0}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 8}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'wav2vec2', 'quantize_targets': True, 'extractor_mode': 'layer_norm', 'layer_norm_first': True, 'final_dim': 768, 'latent_temp': [2.0, 0.1, 0.999995], 'encoder_layerdrop': 0.0, 'dropout_input': 0.0, 'dropout_features': 0.0, 'dropout': 0.0, 'attention_dropout': 0.0, 'conv_bias': True, 'encoder_layers': 24, 'encoder_embed_dim': 1024, 'encoder_ffn_embed_dim': 4096, 'encoder_attention_heads': 16, 'feature_grad_mult': 1.0}, 'task': {'_name': 'audio_pretraining', 'data': '/home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/data/pretraining', 'max_sample_size': 480000, 'min_sample_size': 32000, 'normalize': True}, 'criterion': {'_name': 'wav2vec', 'infonce': True, 'log_keys': ['prob_perplexity', 'code_perplexity', 'temp'], 'loss_weights': [0.1, 0]}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-06, 'weight_decay': 0.01}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 32000}, 'scoring': None, 'bpe': None, 'tokenizer': None}
+2021-01-02 09:38:04 | INFO | fairseq.data.audio.raw_audio_dataset | loaded 4721, skipped 316 samples
+2021-01-02 09:38:18 | INFO | fairseq_cli.train | Wav2Vec2Model(
+  (feature_extractor): ConvFeatureExtractionModel(
+    (conv_layers): ModuleList(
+      (0): Sequential(
+        (0): Conv1d(1, 512, kernel_size=(10,), stride=(5,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (1): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(3,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (2): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(3,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (3): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(3,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (4): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(3,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (5): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(2,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+      (6): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(2,), stride=(2,))
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Sequential(
+          (0): TransposeLast()
+          (1): Fp32LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (2): TransposeLast()
+        )
+        (3): GELU()
+      )
+    )
+  )
+  (post_extract_proj): Linear(in_features=512, out_features=1024, bias=True)
+  (dropout_input): Dropout(p=0.0, inplace=False)
+  (dropout_features): Dropout(p=0.0, inplace=False)
+  (quantizer): GumbelVectorQuantizer(
+    (weight_proj): Linear(in_features=512, out_features=640, bias=True)
+  )
+  (project_q): Linear(in_features=768, out_features=768, bias=True)
+  (encoder): TransformerEncoder(
+    (pos_conv): Sequential(
+      (0): Conv1d(1024, 1024, kernel_size=(128,), stride=(1,), padding=(64,), groups=16)
+      (1): SamePad()
+      (2): GELU()
+    )
+    (layers): ModuleList(
+      (0): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (6): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (7): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (8): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (9): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (10): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (11): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (12): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (13): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (14): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (15): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (16): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (17): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (18): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (19): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (20): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (21): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (22): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (23): TransformerSentenceEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+        (dropout3): Dropout(p=0.0, inplace=False)
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  (final_proj): Linear(in_features=1024, out_features=768, bias=True)
+)
+2021-01-02 09:38:18 | INFO | fairseq_cli.train | task: AudioPretrainingTask
+2021-01-02 09:38:18 | INFO | fairseq_cli.train | model: Wav2Vec2Model
+2021-01-02 09:38:18 | INFO | fairseq_cli.train | criterion: Wav2vecCriterion)
+2021-01-02 09:38:18 | INFO | fairseq_cli.train | num. model params: 317390592 (num. trained: 317390592)
+2021-01-02 09:38:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 8 workers***********************
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   1: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   2: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   3: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   4: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   5: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   6: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | rank   7: capabilities =  7.0  ; total memory = 15.752 GB ; name = Tesla V100-SXM2-16GB                    
+2021-01-02 09:38:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 8 workers***********************
+2021-01-02 09:38:30 | INFO | fairseq_cli.train | training on 8 devices (GPUs/TPUs)
+2021-01-02 09:38:30 | INFO | fairseq_cli.train | max tokens per GPU = 480000 and batch size per GPU = None
+2021-01-02 09:38:36 | INFO | fairseq.trainer | loaded checkpoint /home/harveen.chadha/_/experiments/experiment_2/english-asr-challenge/checkpoints/checkpoint_last.pt (epoch 146 @ 0 updates)
+2021-01-02 09:38:36 | INFO | fairseq.trainer | loading train data for epoch 146
+2021-01-02 09:38:36 | INFO | fairseq.data.audio.raw_audio_dataset | loaded 152135, skipped 10738 samples
+2021-01-02 09:38:38 | INFO | fairseq.trainer | begin training epoch 146
+Traceback (most recent call last):
+  File "/home/harveen.chadha/_/wav2vec2/fairseq/fairseq_cli/hydra_train.py", line 38, in hydra_main
+    distributed_utils.call_main(cfg, pre_main)
+  File "/home/harveen.chadha/_/wav2vec2/fairseq/fairseq/distributed_utils.py", line 315, in call_main
+    torch.multiprocessing.spawn(
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 199, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 157, in start_processes
+    while not context.join():
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 105, in join
+    raise Exception(
+Exception: process 0 terminated with signal SIGKILL
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-tkxbi9w3'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-z3itqssz'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-ch2atewy'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-r4l_ix9y'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-d5f6xm7n'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-p4cmer3n'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-9e50isrx'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-muj7kd2g'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-ncjsqy_h'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-q3us0m4t'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-19mitiwz'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-k3xeu0q_'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-7y4qhobq'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-uh9qqyw_'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-gso3cvvc'
+Traceback (most recent call last):
+  File "/home/aman_tiwari/anaconda3/lib/python3.8/multiprocessing/resource_tracker.py", line 201, in main
+    cache[rtype].remove(name)
+KeyError: '/mp-ktjw4mr3'

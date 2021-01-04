@@ -1,0 +1,3 @@
+- distributed_training.distributed_port=-1
+- distributed_training.distributed_world_size=8
+- +optimization.update_freq=[8]
