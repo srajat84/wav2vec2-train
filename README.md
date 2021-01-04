@@ -3,6 +3,17 @@ Code base for IITM English ASR Challenge
 
 # Experiment 2 Details
 
+## Folder structure explanation:
+Whenever you are starting with a new language make sure to create a new branch in this repository.
+All executed scripts must be pushed to this repo by **creating PULL Request** only.
+Only after a pull request is approved and merged, we will proceed with training.
+
+```
+checkpoints : will contain the trained checkpoints. Since there is a limit to push only till 25 MB file size in git this folder is by default put in gitignore. The checkpoints after getting trained should be uploaded to GCP bucket.
+
+data: this will contain the data files used for finetuning or pretraining. tsv's , wrd , lexicon and dict files only.
+```
+
 | Type | Value           |
 |------------------|-------------------|
 | Pretraining Model | Base             |
