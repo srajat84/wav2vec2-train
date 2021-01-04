@@ -1,11 +1,14 @@
 #!/bin/bash
 
 
+### Variables to change - start ###
+
 config_name='pretraining_base'
 gpus=8
 run_in_nohup=0  #0 for no, 1 for yes
 update_freq=$((64/${gpus}))
 
+### Variables to change - end ###
 
 
 
