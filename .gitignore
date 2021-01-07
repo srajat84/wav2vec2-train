@@ -89,7 +89,7 @@ target/
 .mypy_cache/
 
 # Checkpoints
-# checkpoints/
-# checkpoints*
+checkpoints/
+checkpoints*
 scripts/pretraining/outputs/*
 scripts/finetuning/outputs/*

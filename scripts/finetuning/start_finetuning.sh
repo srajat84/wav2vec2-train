@@ -4,8 +4,8 @@
 ### Values to change - start ###
 
 config_name='finetuning'
-gpus=8
-run_in_nohup=0  #0 for no, 1 for yes
+gpus=4
+run_in_nohup=1  #0 for no, 1 for yes
 
 ### Values to change - end ###
 

@@ -1,8 +1,8 @@
 
 ### Values to change -start ###
 
-prep_scripts="/home/harveen.chadha/common_scripts/prep_scripts"
-data_path="/home/jupyter/english_asr_challenge/train_NPTEL_IITM/"
+prep_scripts="/home/anirudh/common_scripts/prep_scripts"
+data_path="/home/anirudh/2020_kn_1/finetune_data_ldcil_ka"
 valid_percentage=0.04
 
 ### Values to change end ###
